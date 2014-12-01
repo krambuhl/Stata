@@ -108,10 +108,9 @@ windowWidth.state(isSmallSize, {
 
 __Complex States__
 
+For more complex Stata objects, states can be defined for a particular property or general object state. 
+
 ```js
-// for more complex Stata objects, states can be
-// defined for a particular property or general
-// object state. 
 windowSize.state({
   property: 'width',
   value: isSmallWidth,
@@ -120,15 +119,25 @@ windowSize.state({
   update: function() { },
   exit: function() { }
 });
+```
 
-// Two signatures exist for defining single
-// or multiple states.
+
+Two signatures exist for defining single or multiple states.  
+
+Purpose | Signature
+--- | ---
+Single | `Stata().state(obj)`
+Multiple | `Stata().state([obj, obj])`
+Multiple | `Stata().state(obj, obj)`
+
+```js
 windowSize.state([{
   property: 'width',
   value: isSmallWidth,
   update: function() { }
 }, {
-  value: function() { return !isSmallWidth(this.get('width')); },
+  property: 'width',
+  value: function(value) { return !isSmallWidth(value); },
   update: function() { }
 }]);
 ```
