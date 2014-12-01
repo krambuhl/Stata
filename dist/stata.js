@@ -1,17 +1,16 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define(['underscore'], factory);
+    define([], factory);
   } else if (typeof exports === 'object') {
-    module.exports = factory(require('underscore'));
+    module.exports = factory();
   } else {
-    root.Stata = factory(root.underscore);
+    root.Stata = factory();
   }
-}(this, function(underscore) {
+}(this, function() {
 'use strict';
 
 function Stata() {
 
 }
-
 return Stata;
 }));
