@@ -2,7 +2,7 @@
   "name": "stata",
   "version": "0.1.0",
   "description": "State machines for the web.",
-  "main": "index.js",
+  "main": "dist/stata.js",
   "scripts": {
     "develop": "gulp develop",
     "build": "gulp build",
